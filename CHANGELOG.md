@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Fix the compose step: `hyperframes init` refuses a captured project folder, so new videos start from `templates/composition.html`.
+- Fix the silent render of `example-walkthrough`, which stopped on a narration mix that only exists after step 3.
+- Install `playwright-cli` under `.pw/` even when a parent folder has a `package.json`, and show npm errors.
+
 ## v1.0 — 2026-10-29
 
 - Publish the first release as Video Studio Skill with updated shared artwork.

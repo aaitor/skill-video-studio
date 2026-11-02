@@ -11,7 +11,8 @@ Hard-won environment facts and the roadmap. The full design rationale is in the 
 - **playwright-cli daemon.** Install the binary (local/global) — a bare per-command `npx @playwright/cli`
   drops the browser between `open` / `run-code` / `close`. `capture.sh` installs it under `.pw/` once.
 - **`hyperframes init`** is non-interactive for agents and **requires** `--example|--video|--audio` plus
-  `--non-interactive`. It pings GitHub for skills unless `HYPERFRAMES_SKIP_SKILLS=1`. Telemetry off:
+  `--non-interactive`. It refuses a non-empty folder, so projects skip it: `capture.sh` fills the folder first
+  and the render only needs `index.html`. It pings GitHub for skills unless `HYPERFRAMES_SKIP_SKILLS=1`. Telemetry off:
   `hyperframes telemetry disable` or `HYPERFRAMES_NO_TELEMETRY=1` / `DO_NOT_TRACK=1`.
 - **Determinism.** The browser *capture* is reproducible, not frame-identical — drive chapter timing from
   recorded beats, not wall-clock. The HyperFrames *render* is deterministic (same HTML → same frames).

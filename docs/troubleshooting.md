@@ -6,7 +6,7 @@
 | Playwright cannot launch Chromium | Install the browser/system dependencies and review the platform-specific sandbox notes. |
 | Capture disappears between commands | Use the installed Playwright CLI daemon and the capture wrapper; avoid separate bare `npx` sessions. |
 | Captured footage freezes during render | Preserve the wrappers' dense-keyframe conversion; composition rendering seeks through the video. |
-| HyperFrames init needs input | Use a supported input such as `--video capture.mp4` and the documented non-interactive flags. |
+| `hyperframes init` says the directory is not empty | Skip it. Capture fills the project folder first, and the render only needs `index.html`, copied from `templates/composition.html`. |
 | Composition lint/check fails | Read the error; check clip IDs, timing fields, GSAP selectors, contrast, and referenced assets. |
 | Narration endpoint fails | Check your own configured endpoint/model/voice; keep credentials out of logs and chat. |
 | Avatar output drifts or fails | Review the private plate, required frame rate, host/model dependencies, and GPU memory notes. |
