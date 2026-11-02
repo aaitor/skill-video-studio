@@ -59,6 +59,25 @@ def check_brief(path):
         raise ValueError("Brief needs a capture URL and output profile")
 
 
+def check_render_path(errors):
+    """Guard the documented capture and silent-render path; the tools themselves stay out of CI."""
+    skill = ROOT / ".claude/skills/devrel-video"
+    example = ROOT / "projects/example-walkthrough"
+    readme = (example / "README.md").read_text()
+    # Capture fills the project folder first, and init refuses a non-empty folder.
+    for path in (skill / "SKILL.md", example / "README.md"):
+        if "hyperframes init projects/" in path.read_text():
+            errors.append(f"{path.relative_to(ROOT)}: hyperframes init fails on a captured project")
+    # npm installs into any ancestor with a package.json unless the prefix is explicit.
+    if 'npm i --prefix "$SKILL/.pw"' not in (skill / "scripts/capture.sh").read_text():
+        errors.append("capture.sh: install playwright-cli with an explicit --prefix")
+    # The silent render must not need audio that only exists after a later step.
+    before_render = readme.split("render-qa.sh")[0]
+    for source in re.findall(r'<audio[^>]+src="([^"]+)"', (example / "index.html").read_text()):
+        if source not in before_render:
+            errors.append(f"projects/example-walkthrough/README.md: create {source} before render-qa.sh")
+
+
 def main():
     errors = []
     counts = {"python": 0, "shell": 0, "javascript": 0, "manifests": 0}
@@ -88,6 +107,7 @@ def main():
                 counts["shell" if path.suffix == ".sh" else "javascript"] += 1
         except (SyntaxError, ValueError, ET.ParseError, yaml.YAMLError, TypeError, KeyError) as exc:
             errors.append(f"{path.relative_to(ROOT)}: {exc}")
+    check_render_path(errors)
     # Exercise one existing local utility, without TTS, GPUs, browsers, or any API.
     with tempfile.TemporaryDirectory(prefix="studio-music-check-") as temporary:
         output = Path(temporary) / "bed.wav"

@@ -16,7 +16,7 @@ export PLAYWRIGHT_MCP_SANDBOX=false
 BIN="$SKILL/.pw/node_modules/.bin/playwright-cli"
 if [ ! -x "$BIN" ]; then
   echo "installing @playwright/cli (one-time)…"
-  mkdir -p "$SKILL/.pw" && ( cd "$SKILL/.pw" && npm i @playwright/cli@latest >/dev/null 2>&1 )
+  mkdir -p "$SKILL/.pw" && npm i --prefix "$SKILL/.pw" --loglevel=error @playwright/cli@latest >/dev/null
 fi
 export PATH="$SKILL/.pw/node_modules/.bin:$PATH"
 

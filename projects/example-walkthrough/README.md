@@ -25,9 +25,9 @@ python3 -m http.server 8000 --directory projects/example-walkthrough/site &
 $S/scripts/capture.sh projects/example-walkthrough/capture.js "http://localhost:8000/"
 kill %1   # stop the server
 
-# 2. compose + render the SILENT cut
-HYPERFRAMES_SKIP_SKILLS=1 npx hyperframes init projects/example-walkthrough --video capture.mp4 --skip-transcribe --non-interactive
-#    → fill index.html from $S/templates/composition.html + brands/acme/tokens.json
+# 2. render the SILENT cut. index.html is already composed (from $S/templates/composition.html +
+#    brands/acme/tokens.json) and expects the mix from step 3, so start with a silent track
+ffmpeg -v error -y -f lavfi -i anullsrc=r=48000:cl=stereo -t 26 -q:a 9 projects/example-walkthrough/narration-mix.mp3
 $S/scripts/render-qa.sh projects/example-walkthrough
 
 # 3. add narration + music + EN/ES subtitles (one command — needs a TTS endpoint; see scripts/_env.sh)

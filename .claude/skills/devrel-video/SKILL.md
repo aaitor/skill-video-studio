@@ -48,7 +48,7 @@ Copy `templates/hero-script.js` → `capture.js`; edit the beats (eased `scrollT
 `scripts/capture.sh projects/<slug>/capture.js "<start-url>"` → records `capture.webm`, converts to `capture.mp4`. Contact-sheet it; re-record on layout shift, PII, or a mis-click.
 
 ### 5 · Compose → `projects/<slug>/index.html`
-`hyperframes init projects/<slug> --video capture.mp4 --skip-transcribe --non-interactive`, then replace `index.html` with `templates/composition.html`, filled from the brief + tokens:
+Copy `templates/composition.html` to `projects/<slug>/index.html` and fill it from the brief + tokens (skip `hyperframes init`: it refuses a folder that already holds the capture, and the render only needs `index.html`):
 title card (real claims) → footage in a browser frame → chapter lower-thirds synced to the capture beats (+ the title-card offset) → CTA. Give **every animated element a stable `id`** (GSAP and lint both require it).
 
 ### 5.4 · Narration (optional — drives the timeline)
