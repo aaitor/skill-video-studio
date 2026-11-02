@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.0.1 — 2026-11-02
 
 - Fix the compose step: `hyperframes init` refuses a captured project folder, so new videos start from `templates/composition.html`.
 - Fix the silent render of `example-walkthrough`, which stopped on a narration mix that only exists after step 3.

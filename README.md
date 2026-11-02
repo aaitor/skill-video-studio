@@ -4,7 +4,7 @@
 
 <h1 align="center">Video Studio Skill</h1>
 <p align="center">From product workflow to polished demo.</p>
-<p align="center"><a href="https://github.com/aaitor/skill-video-studio/releases/tag/v1.0">v1.0 release</a> · <code>aaitor/skill-video-studio</code></p>
+<p align="center"><a href="https://github.com/aaitor/skill-video-studio/releases/tag/v1.0.1">v1.0.1 release</a> · <code>aaitor/skill-video-studio</code></p>
 <p align="center">
   <a href="#quick-start">Quick start</a> ·
   <a href="#worked-videos">Worked videos</a> ·

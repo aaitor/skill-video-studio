@@ -41,14 +41,14 @@ Follow the [worked example](../projects/example-walkthrough/README.md) to serve 
 
 Full video generation is a local production workflow and can take time and disk space. The README demo plans a brief only; it does not prove your capture/render stack is installed.
 
-## Install v1.0
+## Install v1.0.1
 
-For the first release, clone the tag instead of the moving default branch:
+For a stable install, clone the release tag instead of the moving default branch:
 
 ```bash
-git clone --branch v1.0 --depth 1 https://github.com/aaitor/skill-video-studio.git
+git clone --branch v1.0.1 --depth 1 https://github.com/aaitor/skill-video-studio.git
 cd skill-video-studio
 claude
 ```
 
-The release keeps the native workspace layout and `/devrel-video` invocation. See the [release notes](https://github.com/aaitor/skill-video-studio/releases/tag/v1.0) for included features and validation limits.
+The release keeps the native workspace layout and `/devrel-video` invocation. See the [release notes](https://github.com/aaitor/skill-video-studio/releases/tag/v1.0.1) for included features and validation limits.
