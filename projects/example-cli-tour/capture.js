@@ -36,7 +36,7 @@ async page => {
   await scrollTo(0, 1100);
   await page.waitForTimeout(700);
 
-  // ── Beat 3 — open a project (t≈12.6) — in-page detail overlay ──
+  // ── Beat 3 — open a project (t≈14.1) — in-page detail overlay ──
   {
     const card = page.locator('.card[data-item="insights"]');  // an Analytics card, visible after the filter
     if (await card.count()) await card.first().click();

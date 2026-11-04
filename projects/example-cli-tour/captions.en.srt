@@ -1,23 +1,27 @@
 1
-00:00:00,400 --> 00:00:03,608
-Making a product demo?
-Let Claude Code do it.
+00:00:00,350 --> 00:00:04,083
+Turn a product workflow into a finished demo with Video Studio.
 
 2
-00:00:04,000 --> 00:00:06,019
-Just point it at
-your product's URL.
+00:00:04,383 --> 00:00:09,141
+Start in Claude Code. Ask for a narrated walkthrough using the bundled Acme app.
 
 3
-00:00:10,200 --> 00:00:15,716
-It opens the page and records the real flow:
-browse, filter, open.
+00:00:09,441 --> 00:00:13,366
+Now move into the browser. Record the real workspace with Playwright.
 
 4
-00:00:19,200 --> 00:00:22,830
-Then it composes, masters,
-and hands you a finished video.
+00:00:13,666 --> 00:00:16,503
+Filter by analytics to narrow the project list.
 
 5
-00:00:24,600 --> 00:00:25,657
-Make your own.
+00:00:16,803 --> 00:00:19,833
+Open Usage Insights and show the project details.
+
+6
+00:00:20,133 --> 00:00:26,959
+Back in the terminal, compose the scenes and master the video. Check the picture, captions, and complete voice track.
+
+7
+00:00:27,259 --> 00:00:31,270
+Your demo is ready. Get Video Studio on GitHub and make your own.

@@ -1,41 +1,41 @@
 # devrel-video project manifest — MULTI-ENVIRONMENT demo (Claude Code terminal ⇄ browser).
 id: example-cli-tour
-mode: narrated-devrel         # narration (leah) + studio music bed + EN/ES subtitles
+mode: narrated-devrel         # narration (Kokoro af_heart) + studio music bed + EN/ES subtitles
 audience: developers evaluating the studio
 message: "Claude Code drives the browser and ships a polished demo video"
 cta:
   title: "Make your own"
   url: "github.com/aaitor/skill-video-studio"
-duration_target_seconds: 27
+duration_target_seconds: 33
 brand: acme
 
 capture:
   url: "http://localhost:8000/"   # the Acme mock app (reused from ../example-walkthrough/site)
   start_command: "python3 -m http.server 8000 --directory projects/example-walkthrough/site"
   viewport: "1600x900"
-  url_label: "acme.com"
+  url_label: "localhost:8000 · Acme demo app"
 
 # The demo moves between the CLI and the browser. The terminal beats are the deterministic HTML
 # re-enactment (templates/cc-terminal.html), composed inline in index.html — no VHS, no live model,
 # no PII. Beats are sequential and hand off by fading through the brand .bg. SKILL §5.8.
 environments:
   - kind: terminal
-    prompt: "use /devrel-video to make a walkthrough of acme.com"
+    prompt: "/devrel-video Narrate a walkthrough of the Acme app"
   - kind: browser
     url: "http://localhost:8000/"
   - kind: terminal
-    prompt: "(result) renders/out.mp4 · 1920×1080 · 26s"
+    prompt: "(result) renders/out.mp4 · 1920×1080 · H.264 + AAC"
 terminal:
-  demo_dir: ~/acme-demo
+  capture_mode: authored-reenactment
 
 # chapter data-start = beat at_seconds (absolute, since beats are sequential clips, not offset from one footage).
 beats:
   - label: "Claude Code: the prompt"
-    at_seconds: 3.0
+    at_seconds: 4.23
   - label: "The Acme workspace"
-    at_seconds: 10.0
+    at_seconds: 9.29
   - label: "Claude Code: the result"
-    at_seconds: 18.8
+    at_seconds: 19.98
 
 approved_claims:
   - "Everything your team ships, in one place."
@@ -45,7 +45,7 @@ outputs:
 
 audio:
   music: corporate            # gen-bgm.py "corporate" style (see README "Music & voice"), ducked under the voice
-  narration: leah             # fixed-beat narration — narrate.sh → narration-mix.mp3 (beats are not voice-driven)
+  narration: af_heart              # measured voice lengths drive every scene; no fixed-time truncation
   avatar: null
   avatar_plate: null
   subtitles: [en, es]         # captions.en.srt / captions.es.srt

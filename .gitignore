@@ -9,6 +9,8 @@ hyperframes.lock.json
 # generated media (keep source: index.html, capture.js, brief.yaml, tokens.json, logo.svg)
 *.webm
 *.mp4
+# Reviewed public README deliverable; intermediate and private media stay ignored.
+!/assets/default-demo.mp4
 *.mp3
 *.wav
 **/renders/*

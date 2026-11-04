@@ -1,48 +1,55 @@
-# example-cli-tour
+# Narrated terminal/browser demo
 
-A **multi-environment** demo: the cut moves between **Claude Code (terminal)** and the **browser** — a prompt
-in Claude Code → the Acme product recorded live in the browser → back to Claude Code with the result — and each
-beat hands off by fading through the brand colour (SKILL §5.8).
+[![Terminal → browser → terminal walkthrough](renders/demo.gif)](../../assets/default-demo.mp4)
 
-[![claude code ⇄ browser demo](renders/demo.gif)](https://youtu.be/lvpKaYUVNws)
+**[Watch the full video with sound](../../assets/default-demo.mp4)** (32.1 seconds, 1920 × 1080, H.264/AAC). This is the default README video. The previous fixed-duration cut has been replaced.
 
-▶ [Watch the full video with sound on YouTube](https://youtu.be/lvpKaYUVNws).
+A single local **Kokoro `af_heart`** narrator guides the complete flow: terminal prompt → real Acme browser capture → analytics filter → Usage Insights detail → terminal result → closing card. Scenes fade through the brand background at both environment changes. Music stays quiet under the narration, and EN/ES caption sidecars accompany the sources.
 
-The terminal beats are the **deterministic HTML re-enactment** (`templates/cc-terminal.html`, composed inline in
-`index.html`): the prompt is typed with a GSAP `steps()` typewriter and the answer revealed line by line — no
-VHS, no live model, no PII, pixel-perfect and re-timable. The browser beat reuses the Acme mock app
-(`../example-walkthrough/site/`). It's **narrated** (voice `leah`) over a **studio** music bed, with EN/ES subtitles.
+The terminal scenes are **authored HTML reenactments**, not footage of a live Claude Code run. The browser footage records real interactions with the bundled Acme fixture. The finished MP4 was actually rendered and checked; the separate [live intake demo](../../examples/README.md) records real Claude Code planning and stops before rendering.
 
-> `capture.mp4`, `bgm.*`, `voice.wav`, `narration-mix.mp3`, and `renders/*.mp4` are **gitignored**. Committed:
-> `brief.yaml`, `capture.js`, `index.html`, `narrate.py`, `narrate.sh`, `thumbnail.html`, `captions.*.srt`, and
-> `renders/{contact-sample.png, thumbnail.jpg, demo.gif}`.
+## Rebuild
 
-## Make it
+Requires the [capture/render prerequisites](../../docs/installation.md#capture-and-rendering-prerequisites), HyperFrames CLI (the checked render used 0.9.5), and the development Python dependencies. Install the optional local voice runtime into your virtual environment:
 
 ```bash
-# from the repo root
-S=.claude/skills/devrel-video
-
-# 1. browser beat — serve the shared Acme mock app and capture it
-python3 -m http.server 8000 --directory projects/example-walkthrough/site &
-$S/scripts/capture.sh projects/example-cli-tour/capture.js "http://localhost:8000/"
-kill %1
-
-# 2. terminal beats — already authored inline in index.html (the cc-terminal re-enactment).
-#    To capture a REAL Claude Code session instead, use VHS: $S/scripts/capture-terminal.sh <tape>
-
-# 3. narration (leah) + studio music bed, pre-mixed → narration-mix.mp3 (needs a TTS endpoint — scripts/_env.sh)
-DEVREL_VIDEO_ENV=~/.config/devrel-video/env.rc projects/example-cli-tour/narrate.sh leah
-$S/scripts/render-qa.sh projects/example-cli-tour
-
-# 4. thumbnail
-$S/scripts/thumbnail.sh projects/example-cli-tour
+python3 -m pip install kokoro-onnx==0.6.1 soundfile==0.14.0
+export HYPERFRAMES_PYTHON="$(command -v python3)"
+# The first local TTS run downloads Kokoro's model and voices. No TTS account is required.
 ```
 
-## Make it yours
+From the repository root, serve the fixture in a separate terminal:
 
-- **Change the story**: edit the two `cc-*` beats in `index.html` (the prompt + the answer lines) and the
-  browser beat's `capture.js`. Keep the typewriter `width:Nch` in sync with its `steps(N)` (N = char count).
-- **More environments / a real session**: see SKILL §5.8 (VHS capture, `stitch-envs.sh`, the composition seam).
-- **Change the narration**: edit the lines + their beat-start times in `narrate.py`, then re-run `narrate.sh`
-  (voice arg, e.g. `narrate.sh leo`) and render. The beats are fixed by the composition, so the voice fits them.
+```bash
+python3 -m http.server 8000 --bind 127.0.0.1 --directory projects/example-walkthrough/site
+```
+
+Then capture, generate narration, and render:
+
+```bash
+S=.claude/skills/devrel-video
+$S/scripts/capture.sh projects/example-cli-tour/capture.js http://127.0.0.1:8000/
+projects/example-cli-tour/narrate.sh
+$S/scripts/render-qa.sh projects/example-cli-tour
+$S/scripts/thumbnail.sh projects/example-cli-tour
+python3 scripts/check_demo_audio.py projects/example-cli-tour/renders/out.mp4 projects/example-cli-tour/narration-mix.mp3
+```
+
+Stop the fixture server when finished. `narrate.sh` uses `af_heart` for every sentence. To select another local Kokoro voice, pass its ID; to use your configured Orpheus endpoint, run `NARRATION_ENGINE=orpheus projects/example-cli-tour/narrate.sh dan`.
+
+## Why the voice stays complete
+
+The old mixer placed lines on fixed beats, added overlapping takes, and clipped samples at 27.2 seconds. The replacement measures every WAV and places each sentence sequentially, with a 300 ms gap and an 800 ms final tail. It never truncates or accelerates speech. Those measurements update the composition, browser action segments, captions, total duration, and music bed together.
+
+`narrate.py` writes `voice.wav`, `timing.json`, `capture-timed.mp4`, and the updated composition/captions. `narrate.sh` generates the local voice takes and mixes the quiet music bed at −16 LUFS. Browser timing uses the capture script's 7.8-second filter and 14.1-second detail boundaries; update those boundaries if you change the capture flow.
+
+`python3 scripts/check.py` includes an offline regression with a 37-second voice track whose last sentence exceeds the old closing slot. It verifies every spoken sample, both channels, the final tail, and repeatable scene retiming. Live TTS and renders stay outside CI.
+
+## Checked deliverables
+
+- [Public README MP4](../../assets/default-demo.mp4), [preview](renders/demo.gif), [thumbnail](renders/thumbnail.jpg), and [contact sheet](renders/contact-sample.png).
+- [English captions](captions.en.srt) and [Spanish captions](captions.es.srt).
+- HyperFrames lint: zero errors; runtime/layout/motion/audio checks pass; all sampled text passes WCAG AA contrast. Structural/style advisories remain nonblocking.
+- Final MP4 audio is compared with the complete reference mix in half-second windows to detect missing audio, level changes, or cuts introduced by rendering/encoding. See [QA record](qa.md).
+
+`assets/default-demo.mp4` is the one explicitly tracked public video. Intermediate captures, voice takes, mixes, and other rendered MP4s stay ignored. No presenter footage, credentials, or host configuration is included.

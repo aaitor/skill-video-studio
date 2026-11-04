@@ -69,115 +69,103 @@
       </symbol>
     </svg>
 
-    <div id="root" data-composition-id="main" data-start="0" data-duration="27.2" data-width="1920" data-height="1080">
+    <div id="root" data-composition-id="main" data-start="0.000000" data-duration="32.070000" data-width="1920" data-height="1080">
 
-      <div id="bg" class="clip fill bg" data-start="0" data-duration="27.2" data-track-index="0" style="z-index:0"></div>
+      <div id="bg" class="clip fill bg" data-start="0.000000" data-duration="32.070000" data-track-index="0" style="z-index:0"></div>
 
       <!-- Scene 1 — title -->
-      <div id="title" class="clip fill center bg" data-start="0" data-duration="3.05" data-track-index="1" style="z-index:5">
+      <div id="title" class="clip fill center bg" data-hold data-start="0.000000" data-duration="4.233333" data-track-index="1" style="z-index:5">
         <svg class="wordmark" viewBox="0 0 132 24" width="220" height="40" style="margin-bottom:10px"><use href="#brand-logo" /></svg>
         <div class="kicker">DevRel Video Studio</div>
         <div class="t-title">From a prompt to a <span class="hl">demo video</span>.</div>
-        <div class="t-sub">Claude Code drives the browser — and narrates the result.</div>
+        <div class="t-sub">A complete narrated walkthrough, from capture to final QA.</div>
       </div>
 
-      <!-- Beat T1 — Claude Code: the prompt (3.0 → 10.0) -->
-      <div id="t1" class="clip win cc" data-start="3.0" data-duration="7.0" data-track-index="1">
-        <div class="cc-bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="cc-label">claude — ~/acme-demo</span></div>
+      <!-- Beat T1 — Claude Code prompt; boundaries follow the measured voice -->
+      <div id="t1" class="clip win cc" data-start="4.233333" data-duration="5.057333" data-track-index="1">
+        <div class="cc-bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="cc-label">Claude Code · terminal scene (reenactment)</span></div>
         <div class="cc-body">
-          <div id="t1welcome" class="cc-welcome"><span class="sp">✻</span> <b>Claude Code</b> · Opus · ~/acme-demo</div>
+          <div id="t1welcome" class="cc-welcome"><span class="sp">✻</span> <b>Claude Code</b> · Video Studio Skill</div>
           <div class="cc-cmd">
             <span id="t1mk" class="mk">&rsaquo;</span>
-            <span id="t1type" class="type" style="width:51ch">use /devrel-video to make a walkthrough of acme.com</span>
+            <span id="t1type" class="type" style="width:51ch">/devrel-video Narrate a walkthrough of the Acme app</span>
             <span id="t1cur" class="cc-cur"></span>
           </div>
           <div class="cc-ans">
-            <div class="row" id="t1a1"><span class="b">&#9679;</span><span>Opening <span class="hl">acme.com</span> and recording the live flow with Playwright.</span></div>
+            <div class="row" id="t1a1"><span class="b">&#9679;</span><span>Use the bundled Acme fixture and the existing brand.</span></div>
             <div class="row" id="t1a2"><span class="b">&nbsp;</span><span class="muted">browse &rarr; filter by category &rarr; open a project</span></div>
           </div>
         </div>
       </div>
 
-      <!-- Beat B — the product in the browser (9.4 → 19.4) -->
-      <div id="b-frame" class="clip win br-frame" data-start="9.4" data-duration="10.0" data-track-index="1">
-        <div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="url">acme.com</span></div>
+      <!-- Beat B — the product in the browser; each action follows its narration -->
+      <div id="b-frame" class="clip win br-frame" data-start="9.290667" data-duration="10.692000" data-track-index="1">
+        <div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="url">localhost:8000 · Acme demo app</span></div>
       </div>
-      <video id="b-roll" class="clip" src="capture.mp4" muted playsinline data-start="9.4" data-duration="10.0" data-track-index="0"></video>
-      <svg id="brandmark" class="clip wordmark" viewBox="0 0 132 24" width="132" height="24" data-start="9.4" data-duration="10.0" data-track-index="2"><use href="#brand-logo" /></svg>
-      <div id="b-ch" class="clip chapter" data-start="10.0" data-duration="8.6" data-track-index="3"><span class="d"></span> The Acme workspace</div>
+      <video id="b-roll" class="clip" src="capture-timed.mp4" muted playsinline data-start="9.290667" data-duration="10.692000" data-track-index="0"></video>
+      <svg id="brandmark" class="clip wordmark" viewBox="0 0 132 24" width="132" height="24" data-start="9.290667" data-duration="10.692000" data-track-index="2"><use href="#brand-logo" /></svg>
+      <div id="b-ch" class="clip chapter" data-start="9.290667" data-duration="4.225333" data-track-index="3"><span class="d"></span> The Acme workspace</div>
+      <div id="filter-ch" class="clip chapter" data-start="13.516000" data-duration="3.137333" data-track-index="3"><span class="d"></span> Filter by analytics</div>
+      <div id="detail-ch" class="clip chapter" data-start="16.653333" data-duration="3.329333" data-track-index="3"><span class="d"></span> Open project details</div>
 
-      <!-- Beat T2 — Claude Code: the result (18.8 → 24.8) -->
-      <div id="t2" class="clip win cc" data-start="18.8" data-duration="6.0" data-track-index="1">
-        <div class="cc-bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="cc-label">claude — ~/acme-demo</span></div>
+      <!-- Beat T2 — Claude Code result; boundaries follow the measured voice -->
+      <div id="t2" class="clip win cc" data-start="19.982667" data-duration="7.126667" data-track-index="1">
+        <div class="cc-bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="cc-label">Claude Code · terminal scene (reenactment)</span></div>
         <div class="cc-body">
-          <div class="cc-welcome"><span class="sp">✻</span> <b>Claude Code</b> · Opus · ~/acme-demo</div>
+          <div class="cc-welcome"><span class="sp">✻</span> <b>Claude Code</b> · Video Studio Skill</div>
           <div class="cc-ans">
             <div class="row" id="t2a1"><span class="b">&#9679;</span><span>Composed the title, browser frame, chapters, and CTA.</span></div>
-            <div class="row" id="t2a2"><span class="b">&#9679;</span><span>Mastered with FFmpeg, added narration and subtitles.</span></div>
-            <div class="row" id="t2a3"><span class="ok">&#10003;</span><span><span class="hl">renders/out.mp4</span> &middot; 1920&times;1080 &middot; 26s</span></div>
+            <div class="row" id="t2a2"><span class="b">&#9679;</span><span>Mastered with FFmpeg. Complete narration and EN/ES captions.</span></div>
+            <div class="row" id="t2a3"><span class="ok">&#10003;</span><span><span class="hl">renders/out.mp4</span> &middot; 1920&times;1080 &middot; H.264 + AAC</span></div>
           </div>
           <div id="t2done" class="cc-done">&#10022; Done</div>
         </div>
       </div>
 
       <!-- Scene 3 — CTA -->
-      <div id="cta" class="clip fill center bg" data-start="24.4" data-duration="2.8" data-track-index="4" style="z-index:8">
+      <div id="cta" class="clip fill center bg" data-start="27.109333" data-duration="4.960667" data-track-index="4" style="z-index:8">
         <svg class="wordmark" viewBox="0 0 132 24" width="220" height="40" style="margin-bottom:34px"><use href="#brand-logo" /></svg>
         <div class="cta-title">Make your own</div>
         <div class="cta-url">github.com/aaitor/skill-video-studio</div>
       </div>
 
-      <!-- narration (leah) + studio music bed, pre-ducked & mastered — scripts (narrate.sh → narration-mix.mp3) -->
-      <audio id="bgm" class="clip" src="narration-mix.mp3" data-start="0" data-duration="27.2" data-track-index="9" data-volume="1"></audio>
+      <!-- narration (Kokoro af_heart) + quiet music bed, pre-ducked & mastered — scripts (narrate.sh → narration-mix.mp3) -->
+      <audio id="bgm" class="clip" src="narration-mix.mp3" data-start="0.000000" data-duration="32.070000" data-track-index="9" data-volume="1"></audio>
     </div>
 
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      // title
-      tl.from("#title .wordmark", { opacity:0, scale:0.92, duration:0.6 }, 0.0);
-      tl.from("#title .kicker",   { opacity:0, y:-18, duration:0.6 }, 0.25);
-      tl.from("#title .t-title",  { opacity:0, y:34, duration:0.7 }, 0.45);
-      tl.from("#title .t-sub",    { opacity:0, y:20, duration:0.6 }, 0.85);
-
-      // T1 — terminal in, prompt typed, answer revealed
-      tl.from("#t1", { opacity:0, scale:0.97, duration:0.5 }, 3.0);
-      tl.from("#t1welcome", { opacity:0, duration:0.4 }, 3.4);
-      tl.from("#t1mk", { opacity:0, duration:0.3 }, 3.7);
-      tl.from("#t1type", { width:0, duration:1.9, ease:"steps(51)" }, 3.95);
-      tl.to("#t1cur", { opacity:0, duration:0.2 }, 6.1);
-      tl.from("#t1a1", { opacity:0, y:12, duration:0.4 }, 6.5);
-      tl.from("#t1a2", { opacity:0, y:12, duration:0.4 }, 7.0);
-      // hand-off T1 -> browser at 9.4 (fade down through .bg, then browser pops up)
-      tl.to("#t1", { opacity:0, duration:0.35 }, 9.05);
-      tl.set("#t1", { opacity:0 }, 10.0);
-      tl.from("#b-frame", { opacity:0, scale:0.96, duration:0.45 }, 9.4);
-      tl.from("#b-roll",  { opacity:0, scale:0.96, duration:0.45 }, 9.4);
-      tl.from("#brandmark", { opacity:0, duration:0.5 }, 9.8);
-      tl.from("#b-ch", { opacity:0, x:-26, duration:0.5 }, 10.0);
-
-      // hand-off browser -> T2 at 18.8
-      tl.to("#b-frame", { opacity:0, duration:0.35 }, 18.45);
-      tl.to("#b-roll",  { opacity:0, duration:0.35 }, 18.45);
-      tl.to("#b-ch",    { opacity:0, duration:0.3 }, 18.45);
-      tl.to("#brandmark", { opacity:0, duration:0.3 }, 18.45);
-      tl.set("#b-frame", { opacity:0 }, 19.4);
-      tl.set("#b-roll",  { opacity:0 }, 19.4);
-      tl.set("#b-ch",    { opacity:0 }, 19.4);
-      tl.set("#brandmark", { opacity:0 }, 19.4);
-      tl.from("#t2", { opacity:0, scale:0.97, duration:0.45 }, 18.8);
-      tl.from("#t2a1", { opacity:0, y:12, duration:0.4 }, 19.35);
-      tl.from("#t2a2", { opacity:0, y:12, duration:0.4 }, 19.8);
-      tl.from("#t2a3", { opacity:0, y:12, duration:0.4 }, 20.3);
-      tl.from("#t2done", { opacity:0, duration:0.4 }, 20.95);
-
-      // hand-off T2 -> CTA at 24.4
-      tl.to("#t2", { opacity:0, duration:0.35 }, 24.05);
-      tl.set("#t2", { opacity:0 }, 24.8);
-      tl.from("#cta .wordmark",  { opacity:0, y:22, duration:0.5 }, 24.4);
-      tl.from("#cta .cta-title", { opacity:0, y:28, duration:0.6 }, 24.55);
-      tl.from("#cta .cta-url",   { opacity:0, y:20, duration:0.6 }, 24.8);
+      // Rewritten from measured WAV lengths by narrate.py; never fit speech into fixed beats.
+      const timing = {"total": 32.07, "title_end": 4.233333333333333, "terminal_start": 4.233333333333333, "browser_start": 9.290666666666667, "filter_start": 13.516, "detail_start": 16.653333333333336, "result_start": 19.982666666666667, "cta_start": 27.109333333333336, "vo_starts": [0.35, 4.383333333333334, 9.440666666666667, 13.666, 16.803333333333335, 20.132666666666665, 27.259333333333334], "line_durs": [3.7333333333333334, 4.757333333333333, 3.925333333333333, 2.8373333333333335, 3.029333333333333, 6.826666666666667, 4.010666666666666]};
+      const t = timing;
+      const enter = (id, at) => tl.from(id, {opacity:0, scale:0.975, duration:0.28}, at);
+      const leave = (id, at) => tl.to(id, {opacity:0, duration:0.15}, at - 0.15);
+      // Title is visible on the first frame and remains readable throughout its narration.
+      leave("#title", t.terminal_start);
+      enter("#t1", t.terminal_start);
+      tl.from("#t1type", {width:0, duration:1.7, ease:"steps(51)"}, t.terminal_start + 0.25);
+      tl.to("#t1cur", {opacity:0, duration:0.15}, t.terminal_start + 2);
+      tl.from("#t1a1", {opacity:0, y:12, duration:0.3}, t.terminal_start + 2.2);
+      tl.from("#t1a2", {opacity:0, y:12, duration:0.3}, t.terminal_start + 2.6);
+      leave("#t1", t.browser_start);
+      enter("#b-frame", t.browser_start);
+      enter("#b-roll", t.browser_start);
+      enter("#brandmark", t.browser_start);
+      enter("#b-ch", t.browser_start);
+      leave("#b-ch", t.filter_start);
+      enter("#filter-ch", t.filter_start);
+      leave("#filter-ch", t.detail_start);
+      enter("#detail-ch", t.detail_start);
+      leave("#detail-ch", t.result_start);
+      ["#b-frame", "#b-roll", "#brandmark", "#b-ch"].forEach(id => leave(id, t.result_start));
+      enter("#t2", t.result_start);
+      ["#t2a1", "#t2a2", "#t2a3", "#t2done"].forEach((id, i) => {
+        tl.from(id, {opacity:0, y:10, duration:0.3}, t.result_start + 0.4 + i * 0.7);
+      });
+      leave("#t2", t.cta_start);
+      enter("#cta", t.cta_start);
 
       window.__timelines["main"] = tl;
     </script>

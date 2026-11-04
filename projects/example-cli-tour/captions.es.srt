@@ -1,23 +1,27 @@
 1
-00:00:00,400 --> 00:00:03,608
-¿Haciendo un demo de producto?
-Deja que Claude Code lo haga.
+00:00:00,350 --> 00:00:04,083
+Convierte un flujo de producto en un demo terminado con Video Studio.
 
 2
-00:00:04,000 --> 00:00:06,019
-Solo apúntalo a la URL
-de tu producto.
+00:00:04,383 --> 00:00:09,141
+Empieza en Claude Code. Pide un recorrido narrado de la app Acme incluida.
 
 3
-00:00:10,200 --> 00:00:15,716
-Abre la página y graba el flujo real:
-explora, filtra, abre.
+00:00:09,441 --> 00:00:13,366
+Pasa al navegador. Graba el espacio de trabajo real con Playwright.
 
 4
-00:00:19,200 --> 00:00:22,830
-Luego compone, masteriza
-y te entrega un vídeo terminado.
+00:00:13,666 --> 00:00:16,503
+Filtra por analítica para reducir la lista de proyectos.
 
 5
-00:00:24,600 --> 00:00:25,657
-Crea el tuyo.
+00:00:16,803 --> 00:00:19,833
+Abre Usage Insights y muestra los detalles del proyecto.
+
+6
+00:00:20,133 --> 00:00:26,959
+Vuelve al terminal, compón las escenas y masteriza el vídeo. Comprueba imagen, subtítulos y voz completa.
+
+7
+00:00:27,259 --> 00:00:31,270
+Tu demo está listo. Consigue Video Studio en GitHub y crea el tuyo.
