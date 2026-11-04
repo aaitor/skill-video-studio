@@ -108,6 +108,8 @@ def main():
         except (SyntaxError, ValueError, ET.ParseError, yaml.YAMLError, TypeError, KeyError) as exc:
             errors.append(f"{path.relative_to(ROOT)}: {exc}")
     check_render_path(errors)
+    from check_narration import main as check_narration
+    check_narration()
     # Exercise one existing local utility, without TTS, GPUs, browsers, or any API.
     with tempfile.TemporaryDirectory(prefix="studio-music-check-") as temporary:
         output = Path(temporary) / "bed.wav"

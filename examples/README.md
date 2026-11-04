@@ -3,7 +3,9 @@
 The committed recording and generated brief predate the repository rename to `skill-video-studio`. Their original URLs redirect to the current repository; the commands below and recording tape use the new name.
 
 
-The short README GIF follows the approved black-background preset: install the studio, invoke `/devrel-video` in real Claude Code, and inspect a useful result. It records the skill's **intake stage**, creating `projects/demo/brief.yaml` and a three-beat walkthrough plan. No browser capture, video render, external media service, or publishing occurs.
+The short setup GIF follows the approved black-background preset: install the studio, invoke `/devrel-video` in real Claude Code, and inspect a useful result. It records the skill's **intake stage**, creating `projects/demo/brief.yaml` and a three-beat walkthrough plan. No browser capture, video render, external media service, or publishing occurs.
+
+![Real Claude Code intake recording](../assets/terminal-demo.gif)
 
 The studio keeps its native layout. Clone the full repository and run Claude Code from its root; the project skill is already at `.claude/skills/devrel-video`.
 
