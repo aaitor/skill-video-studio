@@ -13,6 +13,7 @@ Checked on 2026-11-04. The deliverable is [`assets/default-demo.mp4`](../../asse
 | Audio continuity | All 64 audible half-second windows match the reference mix; minimum waveform correlation 0.9977; RMS gain 0.994–1.000 |
 | Final sentence | Complete; reference narration ends at 31.270 s, followed by an 800 ms tail |
 | HyperFrames 0.9.5 | Check passed; zero lint/runtime/layout/motion/audio errors; 29/29 sampled text contrast checks pass WCAG AA |
+| README playback | Native video player loads the pinned GitHub raw MP4 in Chrome: 32.1 s, 1920 × 1080; playback advances with no media error |
 | Offline regression | Every sample of seven longer voice takes survives without overlap or truncation; stereo, final tail, and idempotent timing verified |
 
 SHA-256: `f2adfdb0267a3c4745fe65ea7b2dc1a9a665adaf821ffad8a47cd9b4d3bc2078`.

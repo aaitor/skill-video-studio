@@ -20,9 +20,9 @@ A local video-production workspace driven by the **`/devrel-video` Claude Code s
 
 ## Demo
 
-[![Watch the narrated terminal-to-browser walkthrough](projects/example-cli-tour/renders/demo.gif)](assets/default-demo.mp4)
+<video controls width="960" poster="https://raw.githubusercontent.com/aaitor/skill-video-studio/a926d97b19a8453a3a88fe37fe00734773f657f4/projects/example-cli-tour/renders/thumbnail.jpg" src="https://raw.githubusercontent.com/aaitor/skill-video-studio/a926d97b19a8453a3a88fe37fe00734773f657f4/assets/default-demo.mp4"></video>
 
-**[Watch the full video with sound](assets/default-demo.mp4)** — one consistent narrator across terminal → browser → terminal, with a real Acme browser capture, category filtering, project details, and a finished render. The scene timing follows the complete voice takes so sentences finish before the next scene. [Source, rebuild commands, and QA](projects/example-cli-tour/README.md).
+**[Download the full MP4](https://raw.githubusercontent.com/aaitor/skill-video-studio/a926d97b19a8453a3a88fe37fe00734773f657f4/assets/default-demo.mp4)** — one consistent narrator across terminal → browser → terminal, with a real Acme browser capture, category filtering, project details, and a finished render. The scene timing follows the complete voice takes so sentences finish before the next scene. [Source, rebuild commands, and QA](projects/example-cli-tour/README.md).
 
 The terminal scenes are authored reenactments of the workflow. For a separate **live Claude Code intake recording**, see the [short setup demo](examples/README.md); that recording stops before capture/render.
 
@@ -63,9 +63,9 @@ Portrait/social output profiles remain on the roadmap. Full capture/render depen
 
 [![Acme product walkthrough](projects/example-walkthrough/renders/demo.gif)](https://youtu.be/H6npd3uuqls)
 
-**Composed CLI/browser film:** a multi-environment example whose terminal scenes are authored HTML reenactments. [Source and explanation](projects/example-cli-tour/README.md) · [Watch with sound](assets/default-demo.mp4).
+**Composed CLI/browser film:** a multi-environment example whose terminal scenes are authored HTML reenactments. [Source and explanation](projects/example-cli-tour/README.md) · [Watch with sound](#demo).
 
-[![Composed terminal and browser example](projects/example-cli-tour/renders/demo.gif)](assets/default-demo.mp4)
+[![Composed terminal and browser example](projects/example-cli-tour/renders/demo.gif)](#demo)
 
 The checked-in `assets/default-demo.mp4` is the reviewed README video. Other generated MP4/audio files are ignored; rebuild them from the included sources. See [usage prompts](docs/usage.md) for silent, narrated, avatar, voice-swap, and multi-environment requests.
 
