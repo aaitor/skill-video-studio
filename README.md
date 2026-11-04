@@ -26,6 +26,12 @@ A local video-production workspace driven by the **`/devrel-video` Claude Code s
 
 The terminal scenes are authored reenactments of the workflow. For a separate **live Claude Code intake recording**, see the [short setup demo](examples/README.md); that recording stops before capture/render.
 
+### Example 2: Nevermined Catalog
+
+Another video created with the skill: **The Nevermined Catalog: describe the outcome, your agent builds it**. Click the preview to watch on YouTube with sound.
+
+[![Watch The Nevermined Catalog on YouTube](https://i.ytimg.com/vi/UfJnBmDl2N8/hqdefault.jpg)](https://www.youtube.com/watch?v=UfJnBmDl2N8)
+
 ## Quick start
 
 **For planning:** Git and authenticated Claude Code. Clone the full workspace so its native skill and project layout stay together:
