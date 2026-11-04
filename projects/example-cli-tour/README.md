@@ -1,8 +1,8 @@
 # Narrated terminal/browser demo
 
-[![Terminal → browser → terminal walkthrough](renders/demo.gif)](../../README.md#demo)
+[![Terminal → browser → terminal walkthrough](renders/demo.gif)](https://raw.githubusercontent.com/aaitor/skill-video-studio/a926d97b19a8453a3a88fe37fe00734773f657f4/assets/default-demo.mp4)
 
-**[Watch the full video with sound](../../README.md#demo)** (32.1 seconds, 1920 × 1080, H.264/AAC). This is the default README video. The previous fixed-duration cut has been replaced.
+**[Download the full video with sound](https://raw.githubusercontent.com/aaitor/skill-video-studio/a926d97b19a8453a3a88fe37fe00734773f657f4/assets/default-demo.mp4)** (32.1 seconds, 1920 × 1080, H.264/AAC). This is the default README video. The previous fixed-duration cut has been replaced.
 
 A single local **Kokoro `af_heart`** narrator guides the complete flow: terminal prompt → real Acme browser capture → analytics filter → Usage Insights detail → terminal result → closing card. Scenes fade through the brand background at both environment changes. Music stays quiet under the narration, and EN/ES caption sidecars accompany the sources.
 
@@ -41,7 +41,7 @@ Stop the fixture server when finished. `narrate.sh` uses `af_heart` for every se
 
 The old mixer placed lines on fixed beats, added overlapping takes, and clipped samples at 27.2 seconds. The replacement measures every WAV and places each sentence sequentially, with a 300 ms gap and an 800 ms final tail. It never truncates or accelerates speech. Those measurements update the composition, browser action segments, captions, total duration, and music bed together.
 
-`narrate.py` writes `voice.wav`, `timing.json`, `capture-timed.mp4`, and the updated composition/captions. `narrate.sh` generates the local voice takes and mixes the quiet music bed at −16 LUFS. The README embeds the immutable reviewed MP4 from GitHub raw storage; its native player was tested in Chrome. When replacing this video, update both the tracked MP4 and the pinned player URL. Browser timing uses the capture script's 7.8-second filter and 14.1-second detail boundaries; update those boundaries if you change the capture flow.
+`narrate.py` writes `voice.wav`, `timing.json`, `capture-timed.mp4`, and the updated composition/captions. `narrate.sh` generates the local voice takes and mixes the quiet music bed at −16 LUFS. GitHub strips custom video tags from repository READMEs, so the README uses an animated preview linked directly to the immutable reviewed MP4. The hosted file was tested in Chrome for loading and playback. When replacing this video, update both the tracked MP4 and the pinned download URL. Browser timing uses the capture script's 7.8-second filter and 14.1-second detail boundaries; update those boundaries if you change the capture flow.
 
 `python3 scripts/check.py` includes an offline regression with a 37-second voice track whose last sentence exceeds the old closing slot. It verifies every spoken sample, both channels, the final tail, and repeatable scene retiming. Live TTS and renders stay outside CI.
 
