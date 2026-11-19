@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add a small "Video generated with skill-video-studio by @aaitor" credit to the closing CTA card of new videos.
+
 ## v1.0.1 — 2026-11-02
 
 - Fix the compose step: `hyperframes init` refuses a captured project folder, so new videos start from `templates/composition.html`.

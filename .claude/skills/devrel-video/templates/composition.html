@@ -50,6 +50,7 @@
 
       .cta-title { font-size: 88px; font-weight: 800; letter-spacing: -.02em; }
       .cta-url { margin-top: 26px; font-size: 40px; font-weight: 600; color: var(--highlight); }
+      .credit { position: absolute; left: 0; right: 0; bottom: 44px; font-size: 20px; font-weight: 500; color: var(--muted); opacity: .75; }
     </style>
   </head>
   <body>
@@ -91,6 +92,7 @@
         <svg class="wordmark" width="300" height="35" style="margin-bottom:34px"><use href="#brand-logo" /></svg>
         <div class="cta-title">{{CTA_TITLE}}</div>
         <div class="cta-url">{{CTA_URL}}</div>
+        <div class="credit">Video generated with skill-video-studio by @aaitor</div> <!-- keep unless the user asks to drop it -->
       </div>
 
       <!-- ==================== OPTIONAL LAYERS (all supported — see references/production-notes.md, SKILL §5.4–5.7) ====
@@ -171,6 +173,7 @@
       tl.from("#cta .wordmark",  { opacity: 0, y: 22, duration: 0.5 }, {{CTA_START}});
       tl.from("#cta .cta-title", { opacity: 0, y: 28, duration: 0.6 }, {{CTA_START}}+0.15);
       tl.from("#cta .cta-url",   { opacity: 0, y: 20, duration: 0.6 }, {{CTA_START}}+0.4);
+      tl.from("#cta .credit",    { opacity: 0, duration: 0.6 }, {{CTA_START}}+0.7);
       window.__timelines["main"] = tl;
     </script>
   </body>
