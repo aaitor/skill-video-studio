@@ -1,8 +1,11 @@
 # Changelog
 
-## Unreleased
+## v1.0.2 — 2026-11-19
 
 - Add a small "Video generated with skill-video-studio by @aaitor" credit to the closing CTA card of new videos.
+- Replace the README demo with a complete, voice-led video and a direct MP4 download.
+- Add the Nevermined Catalog video as a second worked example.
+- Bump the `actions/checkout` and `actions/setup-node` CI actions.
 
 ## v1.0.1 — 2026-11-02
 
