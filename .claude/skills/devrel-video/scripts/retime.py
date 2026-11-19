@@ -83,12 +83,13 @@ GSAP = {
     ("from", "#cta .wordmark"): cs + 0.1,
     ("from", "#cta .cta-title"): cs + 0.23,
     ("from", "#cta .cta-url"):  cs + 0.48,
+    ("from", "#cta .credit"):   cs + 0.78,                  # optional (projects composed before the credit line)
     ("from", "#avatar"):       vo[0],                       # optional
     ("to",   "#avatar"):       vo[0] + ld[0] - 0.28,        # optional
     ("from", "#avatar-cta"):   vo[4],                       # optional
     ("to",   "#avatar-cta"):   vo[4] + ld[4] - 0.28,        # optional
 }
-GSAP_OPTIONAL = {"#avatar", "#avatar-cta"}
+GSAP_OPTIONAL = {"#avatar", "#avatar-cta", "#cta .credit"}
 
 for (method, sel), val in GSAP.items():
     # tl.from("SEL", { ... no ')' inside ... }, POS );
